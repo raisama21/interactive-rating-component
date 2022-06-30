@@ -1,0 +1,192 @@
+@forward "../scss/base/index";
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+// mixins for media queries ====================================
+$sm-bp: 480px;
+
+@mixin small-breakpoint {
+  @media (min-width: #{$sm-bp}) {
+    @content;
+  }
+}
+
+// typography ===============================================
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rempx;
+  color: hsl(0, 0%, 100 * 1%);
+}
+
+p {
+  font-weight: 400;
+}
+// design layout ===============================================
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: hsl(228, 11%, 9%);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  background-color: hsl(215, 21%, 16%);
+  max-width: 375px;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  z-index: 1;
+
+  @include small-breakpoint() {
+    max-width: 412px;
+    padding: 2rem;
+    border-radius: 1.75rem;
+  }
+}
+
+p {
+  color: hsl(215, 8%, 61%);
+}
+
+h1 {
+  color: hsla(0, 0%, 100 * 1%);
+  margin-block: 1.25rem 1rem;
+
+  @include small-breakpoint() {
+    margin-block: 2rem 1.5rem;
+  }
+}
+.iconstar {
+  background-color: hsl(210, 19%, 18%);
+  padding: 13px;
+  border-radius: 50%;
+
+  @include small-breakpoint() {
+    padding: 16px 16px;
+  }
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin-block: 1.5rem 1rem;
+
+  @include small-breakpoint() {
+    margin-block: 1.75rem;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+// button design & hover =======================================
+li > button {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 50%;
+  background-color: hsl(210, 19%, 18%);
+  color: hsl(215, 8%, 61%);
+  font-weight: 400;
+
+  @include small-breakpoint() {
+    padding: 14px 23px;
+
+    &:focus {
+      background-color: hsl(216, 12%, 54%);
+      color: hsl(217, 12%, 63%);
+    }
+    &:hover {
+      background-color: hsl(25, 97%, 53%);
+      cursor: pointer;
+    }
+  }
+}
+
+#ratingbutton5 {
+  @include small-breakpoint() {
+    &:hover {
+      background-color: hsl(25, 97%, 53%);
+    }
+  }
+}
+
+#button-submit {
+  padding-block: 16px;
+  min-width: 327px;
+  border-radius: 100vmax;
+  border: none;
+  background-color: hsl(25, 97%, 53%);
+  color: hsla(0, 0%, 100 * 1%);
+  font-weight: 400;
+
+  @include small-breakpoint() {
+    min-width: 348px;
+    font-weight: 400;
+
+    &:hover {
+      background-color: hsla(0, 0%, 100 * 1%);
+      color: hsl(25, 97%, 53%);
+      cursor: pointer;
+    }
+  }
+}
+
+// after submit part ===========================================
+
+.container2nd {
+  background-color: hsl(215, 21%, 16%);
+  min-width: 375px;
+  border-radius: 1.25rem;
+  padding-inline: 1.5rem;
+  padding-block: 32px 40px;
+  text-align: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include small-breakpoint() {
+    max-width: 412px;
+    padding: 3.5rem 2rem;
+  }
+}
+
+.thankyouillustration {
+  margin-inline: auto;
+}
+
+.ratingview {
+  margin-inline: 20%;
+  margin-block: 18px 22px;
+  padding-block: 8px;
+  background-color: hsl(210, 19%, 18%);
+  color: hsl(25, 97%, 53%);
+  border-radius: 100vmax;
+
+  @include small-breakpoint() {
+    margin-block: 32px 34px;
+  }
+}
+
+h2 {
+  margin-bottom: 16px;
+
+  @include small-breakpoint() {
+    margin-bottom: 1.125rem;
+  }
+}
